@@ -32,7 +32,7 @@ export class ProjectsComponent implements OnInit {
       error=>{
         console.log(<any>error);
       }
-    )
+    );
   }
 
 }

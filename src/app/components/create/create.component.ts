@@ -12,6 +12,7 @@ import { Global } from 'src/app/services/global';
 export class CreateComponent implements OnInit {
   public title: string;
   public project: Project;
+  public saveProject;
   public status: string;
   public filesToUpload: Array<File>;
   constructor(
@@ -36,7 +37,7 @@ export class CreateComponent implements OnInit {
           this._uploadService.makeFileRequest(Global.url + 'upload-image/' + response.project._id, [], this.filesToUpload, 'image').
             then((result: any) => {
               this.status = 'success';
-              console.log(result);
+              this.saveProject = result.project;
               form.reset();
             });
 

@@ -11,9 +11,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { CreateComponent } from './components/create/create.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ErrorComponent } from './components/error/error.component';
-import { DetailComponent } from './detail/detail.component';
-
-
+import { DetailComponent } from './components/detail/detail.component';
 @NgModule({
   declarations: [
     AppComponent,

@@ -257,3 +257,8 @@ form input[type="submit"]:disabled {
 .projects img {
     width: 100%;
 }
+
+.projects a{
+    text-decoration: none;
+    color: black;
+}
