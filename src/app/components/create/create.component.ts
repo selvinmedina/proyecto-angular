@@ -31,15 +31,17 @@ export class CreateComponent implements OnInit {
     this._projectService.saveProject(this.project).subscribe(
       response => {
         if (response.project) {
-          // Subir la imagen
-          this._uploadService.makeFileRequest(Global.url + 'upload-image/' + response.project.id, [], this.filesToUpload, 'image').then((result: any) => {
-            this.status = 'success';
-            console.log(result);
-            form.reset();
-          });
+          // Subir la imagen\
+          console.log(Global.url + 'upload-image/' + response.project._id)
+          this._uploadService.makeFileRequest(Global.url + 'upload-image/' + response.project._id, [], this.filesToUpload, 'image').
+            then((result: any) => {
+              this.status = 'success';
+              console.log(result);
+              form.reset();
+            });
 
         } else {
-          this.status = 'fao;ed'
+          this.status = 'failed'
         }
       },
       err => {
@@ -50,5 +52,6 @@ export class CreateComponent implements OnInit {
 
   fileChangeEvent(fileinput: any) {
     this.filesToUpload = <Array<File>>fileinput.target.files;
+    console.log(<Array<File>>fileinput.target.files);
   }
 }
