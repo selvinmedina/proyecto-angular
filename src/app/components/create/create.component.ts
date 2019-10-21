@@ -15,6 +15,7 @@ export class CreateComponent implements OnInit {
   public saveProject;
   public status: string;
   public filesToUpload: Array<File>;
+  
   constructor(
     private _projectService: ProjectService,
     private _uploadService: UploadService

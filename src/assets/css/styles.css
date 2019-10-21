@@ -163,6 +163,21 @@ article.about {
     padding-top: 10px;
 }
 
+.container .image {
+    float: left;
+    width: 47%;
+}
+
+.container .image img {
+    width: 100%;
+}
+
+.container .data {
+    float: left;
+    width: 49%;
+    margin-left: 30px;
+}
+
 .container h2 {
     border-bottom: 1px solid #ccc;
     padding-bottom: 10px;
@@ -186,7 +201,7 @@ form input[type="text"], input[type="number"], input[type="email"], form textare
     padding: 5px
 }
 
-form button, input[type="submit"] {
+form button, input[type="submit"], .button-edit, .button-delete {
     display: block;
     font-size: 17px;
     padding: 10px;
@@ -195,6 +210,22 @@ form button, input[type="submit"] {
     background: rgba(53, 103, 164, 1);
     border: 1px solid rgba(13, 67, 133, 1);
     cursor: pointer;
+}
+
+.button-edit, .button-delete{
+    width: 20%;
+    float: left;
+    margin-right: 10px;
+    text-decoration: none;
+    border: none;
+}
+
+.button-edit{
+    background: orange;
+}
+
+.button-delete{
+    background: red;
 }
 
 form button:hover, form input[type="submit"]:hover {
@@ -245,7 +276,6 @@ form input[type="submit"]:disabled {
     margin-left: 20px;
     margin-right: 20px;
     margin-bottom: 30px;
-
 }
 
 .projects .image {
@@ -258,7 +288,7 @@ form input[type="submit"]:disabled {
     width: 100%;
 }
 
-.projects a{
+.projects a {
     text-decoration: none;
     color: black;
 }
