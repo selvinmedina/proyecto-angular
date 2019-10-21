@@ -213,8 +213,9 @@ form button, input[type="submit"], .button-edit, .button-delete {
 }
 
 .button-edit, .button-delete{
-    width: 20%;
+    width: 30%;
     float: left;
+    text-align: center;
     margin-right: 10px;
     text-decoration: none;
     border: none;
@@ -291,4 +292,10 @@ form input[type="submit"]:disabled {
 .projects a {
     text-decoration: none;
     color: black;
+}
+
+.confirm{
+    display: block;
+    font-weight: bold;
+    margin-top: 20px;
 }
