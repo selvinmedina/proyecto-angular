@@ -1,7 +1,12 @@
 <div class="container">
-    <div class="galeria">
-        <div><img src="/assets/img/7.jpg"></div>
-        <div><img src="/assets/img/8.jpg"></div>
-        <div><img src="/assets/img/10.jpg"></div>
+    <h1>Contacto</h1>
+    <input type="number" name="" [(ngModel)]="widthSlider" (keyup)="cargarSlider()" id="">
+    <div *ngIf="anchuraToSlider">
+        <slider [anchura]="anchuraToSlider" 
+                [captions]="caption"
+                (getAutor)="conseguirAutor($event)"></slider>
     </div>
+    <p *ngIf="autor">
+            {{autor.nombre + '' + autor.correo}} 
+    </p>
 </div>

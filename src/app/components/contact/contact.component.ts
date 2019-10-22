@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-declare var $:any;
 
 @Component({
   selector: 'app-contact',
@@ -7,20 +6,25 @@ declare var $:any;
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
+  public widthSlider: number;
+  public anchuraToSlider: number;
+  public caption: boolean;
+  public autor: any;
 
   constructor() { }
 
   ngOnInit() {
-    $('#logo').click(function (e) {
-      $('header').css('background', 'green')
-        .css('height', '50px');
-    });
+    this.caption = false;
+  }
 
-    
-    $('.galeria').bxSlider({
-      mode: 'fade',
-      captions:false,
-      slideWidth: 1200
-    });
+  cargarSlider() {
+    this.anchuraToSlider = null;
+    setTimeout(() => {
+      this.anchuraToSlider = this.widthSlider;
+    }, 1);
+  }
+
+  conseguirAutor(event) {
+    this.autor = event;
   }
 }
