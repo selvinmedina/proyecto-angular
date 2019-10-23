@@ -1,6 +1,11 @@
 <div class="container">
     <h1>Contacto</h1>
-    <input type="number" name="" [(ngModel)]="widthSlider" (keyup)="cargarSlider()" id="">
+    <div id="texto" >
+        <p [hidden]="false" #textos appResaltado>
+            Esta es la pagina de contacto, puedes enviarnos cualquier duda
+        </p>
+    </div>
+    <!-- <input type="number" name="" [(ngModel)]="widthSlider" (keyup)="cargarSlider()" id="">
     <div *ngIf="anchuraToSlider">
         <slider [anchura]="anchuraToSlider" 
                 [captions]="caption"
@@ -8,5 +13,5 @@
     </div>
     <p *ngIf="autor">
             {{autor.nombre + '' + autor.correo}} 
-    </p>
+    </p> -->
 </div>
