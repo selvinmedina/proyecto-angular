@@ -15,7 +15,7 @@ export class CreateComponent implements OnInit {
   public saveProject;
   public status: string;
   public filesToUpload: Array<File>;
-  
+
   constructor(
     private _projectService: ProjectService,
     private _uploadService: UploadService
@@ -30,26 +30,25 @@ export class CreateComponent implements OnInit {
   onSubmit(form) {
     console.log(this.project);
     // Guardar los datos
-    this._projectService.saveProject(this.project).subscribe(
-      response => {
-        if (response.project) {
-          // Subir la imagen\
-          console.log(Global.url + 'upload-image/' + response.project._id)
-          this._uploadService.makeFileRequest(Global.url + 'upload-image/' + response.project._id, [], this.filesToUpload, 'image').
-            then((result: any) => {
+    // Subir la imagen
+    this._uploadService.makeFileRequest(Global.url_image, [], this.filesToUpload, 'image').
+      then((result: any) => {
+        this.project.image = result.data.medium.url;
+        this._projectService.saveProject(this.project).subscribe(
+          response => {
+            if (response.project) {
               this.status = 'success';
-              this.saveProject = result.project;
+              this.saveProject = response.project;
               form.reset();
-            });
-
-        } else {
-          this.status = 'failed'
-        }
-      },
-      err => {
-        console.log(<any>err)
-      }
-    )
+            } else {
+              this.status = 'failed';
+            }
+          },
+          err => {
+            console.log(<any>err)
+          }
+        );
+      });
   }
 
   fileChangeEvent(fileinput: any) {

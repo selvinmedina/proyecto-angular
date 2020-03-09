@@ -47,36 +47,45 @@ export class EditComponent implements OnInit {
   }
 
   onSubmit() {
-    this._projectService.updateProject(this.project).subscribe(
-
-      response => {
-        if (response.project) {
-
-          if (this.filesToUpload) {
-            // Subir la imagen
-            this._uploadService.makeFileRequest(Global.url + 'upload-image/' + response.project._id, [], this.filesToUpload, 'image').
-              then((result: any) => {
-                this.saveProject = result.project;
+    console.log(this.filesToUpload);
+    if (this.filesToUpload) {
+      // Subir la imagen
+      this._uploadService.makeFileRequest(Global.url_image, [], this.filesToUpload, 'image').
+        then((result: any) => {
+          this.project.image = result.data.medium.url;
+          this._projectService.updateProject(this.project).subscribe(
+            response => {
+              if (response.project) {
+                this.saveProject = response.project;
                 this.status = 'success';
-              });
-          } else {
+              } else {
+                this.status = 'failed';
+              }
+            },
+            error => {
+              console.log(error);
+            }
+          );
+        });
+    } else {
+      this._projectService.updateProject(this.project).subscribe(
+        response => {
+          if (response.project) {
             this.saveProject = response.project;
             this.status = 'success';
+          } else {
+            this.status = 'failed';
           }
-        } else {
-          this.status = 'failed'
+        },
+        error => {
+          console.log(error);
         }
-      },
-
-      error => {
-        console.log(error);
-      }
-    )
+      );
+    }
   }
 
   fileChangeEvent(fileinput: any) {
     this.filesToUpload = <Array<File>>fileinput.target.files;
-    console.log(<Array<File>>fileinput.target.files);
   }
 
 }

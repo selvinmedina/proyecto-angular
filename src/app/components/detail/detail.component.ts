@@ -8,7 +8,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
   selector: 'app-detail',
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.css'],
-  providers:[ProjectService]
+  providers: [ProjectService]
 })
 export class DetailComponent implements OnInit {
   public url: string;
@@ -24,7 +24,7 @@ export class DetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._route.params.subscribe(params=>{
+    this._route.params.subscribe(params => {
       let id = params.id;
       this.getProject(id);
     });
@@ -32,29 +32,30 @@ export class DetailComponent implements OnInit {
 
   getProject(id) {
     this._projectService.getProject(id).subscribe(
-      response =>{
+      response => {
+        console.log(response.project);
         this.project = response.project;
       },
-      error=>{
+      error => {
         console.log(<any>error);
       }
     );
   }
 
-  deleteProject(id){
+  deleteProject(id) {
     this._projectService.deleteProject(id).subscribe(
-      response =>{
-        if(response.project){
+      response => {
+        if (response.project) {
           this._router.navigate(['/proyectos']);
         }
       },
-      error=>{
+      error => {
         console.log(error);
       }
     )
   }
 
-  setConfirm(confirm){
+  setConfirm(confirm) {
     this.confirm = confirm;
   }
 }

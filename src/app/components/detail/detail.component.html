@@ -1,6 +1,6 @@
 <div class="container" *ngIf="project">
     <div class="image" *ngIf="project.image">
-        <img src="{{url+'get-image/'+project.image}}" *ngIf="project.image" alt="">
+        <img src="{{project.image}}"  *ngIf="project.image" alt="">
     </div>
     <div class="data">
         <h1 *ngIf="project">{{project.name}}</h1>
