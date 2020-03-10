@@ -11,10 +11,10 @@ export class AboutComponent implements OnInit {
   public email: string;
 
   constructor() {
-      this.title = 'Selvin Medina';
-      this.subtitle = 'Desarrollador de software';
-      this.email = 'selvinmedina0016@gmail.com';
-   }
+    this.title = 'Selvin Medina';
+    this.subtitle = 'Especialista en Software';
+    this.email = 'selvinmedina0016@gmail.com';
+  }
 
   ngOnInit() {
   }
