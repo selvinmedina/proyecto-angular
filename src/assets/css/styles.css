@@ -178,6 +178,10 @@ article.about {
     margin-left: 30px;
 }
 
+li{
+  list-style: none;
+}
+
 .container h2 {
     border-bottom: 1px solid #ccc;
     padding-bottom: 10px;

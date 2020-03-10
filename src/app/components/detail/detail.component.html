@@ -1,11 +1,15 @@
 <div class="container" *ngIf="project">
-    <div class="image" *ngIf="project.image">
-        <img src="{{project.image}}"  *ngIf="project.image" alt="">
-    </div>
-    <div class="data">
-        <h1 *ngIf="project">{{project.name}}</h1>
-        <h3>{{project.descripcion}}</h3>
-        <p>{{project.category}}</p>
-        <p>{{project.langs}}</p>
-    </div>
+  <div class="image" *ngIf="project.image">
+    <img src="{{project.image}}" *ngIf="project.image" alt="{{project.name}}">
+  </div>
+  <div class="data">
+    <h1 *ngIf="project">{{project.name}}</h1>
+    <h3><strong>{{project.category}}</strong></h3>
+    <ul>
+      <li *ngFor="let item of project.langs.split(', ')">
+        {{item}}
+      </li>
+    </ul>
+  </div>
+  <p class="clearfix" style="white-space: pre-line" innerHTML="{{project.descripcion}}"></p>
 </div>

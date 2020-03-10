@@ -39,4 +39,5 @@ export class DetailComponent implements OnInit {
       }
     );
   }
+
 }
