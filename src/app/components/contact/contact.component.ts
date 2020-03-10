@@ -10,15 +10,14 @@ export class ContactComponent implements OnInit {
   public anchuraToSlider: number;
   public caption: boolean;
   public autor: any;
-  @ViewChild("textos",{read:false,static:true}) textos;
+  @ViewChild("textos", { read: false, static: true }) textos;
 
   constructor() {
     this.caption = false;
-   }
+  }
 
   ngOnInit() {
-    this.textos.nativeElement.textContent = 'Jajaj';
-    console.log(this.textos.nativeElement.textContent);
+
   }
 
   cargarSlider() {
