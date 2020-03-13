@@ -1,34 +1,11 @@
 <div id="title">
-  <h1>{{title}}</h1>
-  <h2>{{subtitle}}</h2>
-  <p><a href="mailto:{{email}}">{{email}}</a></p>
+  <h1>{{about.title}}</h1>
+  <h2>{{about.subtitle}}</h2>
+  <p>{{about.email}}</p>
 </div>
 
 <article class="about">
   <h2>Sobre mi</h2>
-  <p>
-    Aprendí a programar en la Asociación Hondureña de Maquiladores y con cursos online en Udemy,
-    Platzi, Youtube, y entre otras plataformas.
-    Me encanta crear cosas y soy autodidacta, normalmente paso programado cosas o aprendiendo nuevas
-    tecnologías.
-    <br><br>
-    Actualmente he estado aprendiendo y dominando Angular, he creado tes blogs, el primero utilizando Angular, el
-    segundo con
-    React, y el tercero con Vue.js.Me gustan esas tecnologías por que dan una experiencia de usuario muy buena
-    y aparte de que la programación en el lado del cliente es mucho mejor, con JavaScript puro o Jquery
-    he escrito muchas más lineas de código, que las que he escrito con Angular, React o Vue para desarrollar
-    ciertas funcionalidades en las aplicaciones web.
-
-    <br><br>
-    Tambien paso parte de mis tiempos libres mejorando mis habilidades en el lenguaje de programación C#.
-    Es la técnología que uso normalmente como Back-End.
-
-    <br><br>
-    Cabe destacar que en el periodo de aprendizaje que tuve en la Asociación Hondureña de Maquiladores
-    me dieron multiples capacitaciones para desarrollar mis habilidades blandas.
-
-    <br><br>
-    Tengo un año de experiencia desarrollando aplicaciones, he creado distintas aplicaciones y sitios webs.
-    También aprendí el lenguaje de programación Java y sé crear aplicaciones móviles.
+  <p style="white-space: pre-line" innerHTML="{{about.descripcion}}">
   </p>
 </article>
