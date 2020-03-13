@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from 'src/app/services/project.service';
 import { About } from 'src/app/models/about';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-about',
@@ -44,7 +45,7 @@ export class AboutComponent implements OnInit {
     this._projectService.saveAbout(this.about).subscribe(
       response => {
         if (response) {
-          form.reset();
+          swal('Éxito', 'Se ha editado correctamente', 'success');
         }
       },
       err => {
