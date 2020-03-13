@@ -6,7 +6,7 @@
   <div class="message failed" *ngIf="status == 'failed'">
     El proyecto no se ha podido crear.
   </div>
-  <form action="" #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+  <form action="" #projectForm="ngForm" (ngSubmit)="onSubmit()">
     <p>
       <label for="name">Nombre</label>
       <input type="text" name="name" id="" #name="ngModel" [(ngModel)]="project.name" required>
