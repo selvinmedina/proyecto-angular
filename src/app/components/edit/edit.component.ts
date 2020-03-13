@@ -41,18 +41,20 @@ export class EditComponent implements OnInit {
         this.project = response.project;
       },
       error => {
-        console.log(<any>error);
       }
     );
   }
 
   onSubmit() {
-    console.log(this.filesToUpload);
     if (this.filesToUpload) {
       // Subir la imagen
       this._uploadService.makeFileRequest(Global.url_image, [], this.filesToUpload, 'image').
         then((result: any) => {
-          this.project.image = result.data.medium.url;
+          if (result.data.image.extension === 'jpg') {
+            this.project.image = result.data.medium.url;
+          } else {
+            this.project.image = result.data.thumb.url;
+          }
           this._projectService.updateProject(this.project).subscribe(
             response => {
               if (response.project) {
@@ -63,7 +65,6 @@ export class EditComponent implements OnInit {
               }
             },
             error => {
-              console.log(error);
             }
           );
         });
@@ -78,7 +79,6 @@ export class EditComponent implements OnInit {
           }
         },
         error => {
-          console.log(error);
         }
       );
     }

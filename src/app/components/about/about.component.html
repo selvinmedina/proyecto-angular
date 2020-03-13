@@ -1,12 +1,38 @@
 <div id="title">
-    <h1>{{title}}</h1>
-    <h2>{{subtitle}}</h2>
-    <p>{{email}}</p>
+  <h1>{{about.title}}</h1>
+  <h2>{{about.subtitle}}</h2>
+  <p>{{about.email}}</p>
 </div>
 
 <article class="about">
-    <h2>Sobre mi</h2>
-    <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, saepe? Vero voluptatum quam maxime dolor qui totam aperiam officiis ipsa a, magni non facere numquam, quaerat mollitia optio quos fugiat. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur nihil nisi quis id minima consequuntur quaerat accusamus amet molestiae distinctio, tempore eligendi, temporibus consectetur deserunt? Eligendi dolorum optio voluptas nulla. Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro vero fugit nobis magni placeat corporis facilis, reprehenderit, quidem consequuntur delectus debitis. Vel iste ratione laboriosam odit repellat nam nihil iusto voluptas perferendis vero veniam sequi quae repellendus ex, facilis aliquam nemo quis corporis doloribus, quos porro quam illum. Voluptates alias dolorem laboriosam cum esse itaque deleniti dolorum in debitis neque repellat cumque impedit ad, eveniet perferendis tenetur magni laborum unde minima nulla? Reiciendis accusantium aut, repudiandae debitis laboriosam quo distinctio ducimus quaerat minus nulla odit vero a facere, corrupti libero id necessitatibus enim quidem officia vitae, commodi autem consequatur? Nostrum.
-    </p>
+  <h2>Sobre mi</h2>
+  <p>
+    {{about.descripcion}}
+  </p>
+  <form action="" #aboutForm="ngForm" (ngSubmit)="onSubmit(aboutForm)">
+
+    <label for="name">Titulo</label>
+    <input type="text" name="title" id="" #title="ngModel" [(ngModel)]="about.title" required>
+
+    <label for="name">Subtitulo</label>
+    <input type="text" name="subtitle" id="" #subtitle="ngModel" [(ngModel)]="about.subtitle" required>
+    <span *ngIf="subtitle.touched && !subtitle.valid" class="form_error">
+      El subtitulo es obligatorio
+    </span>
+
+    <label for="name">Email</label>
+    <input type="email" name="email" id="" #email="ngModel" [(ngModel)]="about.email" required>
+    <span *ngIf="email.touched && !email.valid" class="form_error">
+      El email es obligatorio
+    </span>
+
+    <label for="descripcion">Descripcion</label>
+    <textarea type="text" name="descripcion" id="" #descripcion="ngModel" [(ngModel)]="about.descripcion"
+      required></textarea>
+    <span *ngIf="descripcion.touched && !descripcion.valid" class="form_error">
+      La descripcion es obligatoria
+    </span>
+
+    <input type="submit" value="Enviar" [disabled]="!aboutForm.form.valid">
+  </form> <br>
 </article>
