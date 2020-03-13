@@ -50,11 +50,8 @@ export class EditComponent implements OnInit {
       // Subir la imagen
       this._uploadService.makeFileRequest(Global.url_image, [], this.filesToUpload, 'image').
         then((result: any) => {
-          if (result.data.image.extension === 'jpg') {
-            this.project.image = result.data.medium.url;
-          } else {
-            this.project.image = result.data.thumb.url;
-          }
+          this.project.image = result.data.medium.url;
+
           this._projectService.updateProject(this.project).subscribe(
             response => {
               if (response.project) {
