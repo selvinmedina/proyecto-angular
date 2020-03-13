@@ -1,19 +1,21 @@
 <div class="container">
-    <h2>Proyectos</h2>
-
-    <ul>
-        <li *ngFor="let project of projects" class="projects">
-            <a [routerLink]="['/proyecto', project._id]">
-                <div class=" image">
-                    <img src="{{project.image}}" *ngIf="project.image" alt="">
-                </div>
-                <h3>
-                    {{project.name}}
-                </h3>
-                <p>
-                    {{project.category}}
-                </p>
-            </a>
-        </li>
-    </ul>
+  <h2>Proyectos</h2>
+  <div *ngIf="!projects" style="text-align: center; display: block;">
+    <img src="../../../assets/img/Spinner.gif" width="20%" alt="">
+  </div>
+  <ul *ngIf="projects">
+    <li *ngFor="let project of projects" class="projects">
+      <a [routerLink]="['/proyecto', project._id]">
+        <div class=" image">
+          <img src="{{project.image}}" *ngIf="project.image" alt="">
+        </div>
+        <h3>
+          {{project.name}}
+        </h3>
+        <p>
+          {{project.category}}
+        </p>
+      </a>
+    </li>
+  </ul>
 </div>

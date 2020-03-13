@@ -1,10 +1,13 @@
-<div id="title">
+<div *ngIf="!about" style="text-align: center; display: block;">
+  <img src="../../../assets/img/Spinner.gif" width="20%" alt="">
+</div>
+<div *ngIf="about" id="title">
   <h1>{{about.title}}</h1>
   <h2>{{about.subtitle}}</h2>
   <p> <a href="mailto:{{about.email}}">{{about.email}}</a></p>
 </div>
 
-<article class="about">
+<article *ngIf="about" class="about">
   <h2>Sobre mi</h2>
   <p style="white-space: pre-line" innerHTML="{{about.descripcion}}">
   </p>
