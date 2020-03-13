@@ -93,6 +93,7 @@ header a:hover, .actived {
 /* Contenedor principal */
 
 #content {
+    display: flex;
     min-height: 600px;
     height: auto;
     width: 75%;
