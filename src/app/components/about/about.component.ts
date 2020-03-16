@@ -15,7 +15,7 @@ export class AboutComponent implements OnInit {
   constructor(
     private _projectService: ProjectService,
   ) {
-    this.about = new About('', '', '', '', '');
+
   }
 
   ngOnInit() {
