@@ -1,7 +1,7 @@
 <div class="container">
   <h2>Proyectos</h2>
-  <div *ngIf="!projects" style="text-align: center; display: block;">
-    <img class="centrada" src="../../../assets/img/Spinner.gif" width="60%" alt="">
+  <div *ngIf="!projects" class="center">
+    <img src="../../../assets/img/Spinner.gif" class="center-image" alt="">
   </div>
   <ul *ngIf="projects">
     <li *ngFor="let project of projects" class="projects">

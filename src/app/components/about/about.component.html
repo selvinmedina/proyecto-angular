@@ -1,6 +1,8 @@
-<div *ngIf="!about" style="text-align: center; display: block;">
-  <img src="../../../assets/img/Spinner.gif" width="60%" alt="">
+<div *ngIf="!about" class="center">
+  <img src="../../../assets/img/Spinner.gif" class="center-image" alt="">
 </div>
+
+
 <div *ngIf="about" id="title">
   <h1>{{about.title}}</h1>
   <h2>{{about.subtitle}}</h2>

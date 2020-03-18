@@ -304,3 +304,12 @@ form input[type="submit"]:disabled {
     font-weight: bold;
     margin-top: 20px;
 }
+
+.center-image{
+  width: 15%;
+  margin-top: 15%;
+}
+
+.center {
+  text-align: center;
+ }

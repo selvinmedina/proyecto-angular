@@ -1,4 +1,6 @@
 a { text-decoration: none; }
-img {
-  margin-left: 210%;
+
+:host(app-about){
+  width: 100%;
+  height: 100%;
 }
